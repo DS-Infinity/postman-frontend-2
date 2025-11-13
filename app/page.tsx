@@ -62,7 +62,7 @@ export default function Home() {
               <Link
                 href={`/movie/${movie.imdbID}`}
                 key={index}
-                scroll={false}
+                // scroll={false}
                 className='mb-4 bg-pink-500 border-4 p-4 hover:cursor-pointer'
                 // onClick={() => {
                 //   router.push(`/movie/${movie.imdbID}`);
