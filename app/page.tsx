@@ -11,10 +11,10 @@ export default function Home() {
   const [inputValue, setInputValue] = useState<string>('');
   const [query, setQuery] = useState<string>('');
   const [movies, setMovies] = useState<Movie[]>([]);
+  const apiKey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
 
   useEffect(() => {
     const fetchMovies = async () => {
-      const apiKey = process.env.NEXT_PUBLIC_OMDB_API_KEY;
       if (query.length === 0) {
         setMovies([]);
         return;
@@ -30,8 +30,7 @@ export default function Home() {
       }
     };
     fetchMovies();
-    console.log(movies);
-  }, [query]);
+  }, [query, apiKey]);
   return (
     <div className='flex min-h-screen items-center justify-center font-sans'>
       <main className='flex min-h-screen w-full bg-green-500 flex-col'>
